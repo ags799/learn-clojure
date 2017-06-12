@@ -1,3 +1,4 @@
-# task list
+# Learn Clojure
 
-An app developed for learning Clojure.
+An implementation following
+[this ClojureScript tutorial](https://github.com/magomimmo/modern-cljs).
