@@ -1,4 +1,4 @@
 .PHONY: live
 
 live:
-	boot serve -d target watch reload cljs target
+	boot serve -d target watch reload cljs-repl cljs target
