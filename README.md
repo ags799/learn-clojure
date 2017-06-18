@@ -5,6 +5,6 @@ An implementation following
 
 ## Development
 
-To start a live-reloaded webserver
+Start a live-reloaded webserver with
 
     make live
