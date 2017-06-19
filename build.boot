@@ -15,3 +15,16 @@
          '[pandeiro.boot-http :refer [serve]]
          '[adzerk.boot-reload :refer [reload]]
          '[adzerk.boot-cljs-repl :refer [cljs-repl start-repl]])
+
+(def target-directory "target")
+
+(deftask dev
+  "Start development environment."
+  []
+  (comp
+    (serve :dir target-directory)
+    (watch)
+    (reload)
+    (cljs-repl)
+    (cljs)
+    (target :dir #{target-directory})))
