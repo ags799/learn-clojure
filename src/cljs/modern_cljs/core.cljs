@@ -14,6 +14,12 @@
 (rum/defc tasks []
   [:ol (map-indexed #(rum/with-key (task %2) %1) task-list)])
 
-(rum/defc app [] [:div.app (header) (tasks)])
+(rum/defc app [db] [:div.app (header) (tasks)])
 
-(rum/mount (app) (js/document.getElementById "app"))
+(def schema {})
+(defonce conn (datascript/create-conn schema))
+(defn render [db] (rum/mount (app db) (js/document.getElementById "app")))
+(datascript/listen! conn :render
+  (fn [tx-report] (render (:db-after tx-report))))
+
+(render @conn)
