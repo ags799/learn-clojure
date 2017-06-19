@@ -4,8 +4,6 @@
 
 (enable-console-print!)
 
-(println "Hello, world!")
-
 (rum/defc app [] [:div.app "Hello!"])
 
 (rum/mount (app) (js/document.getElementById "app"))
