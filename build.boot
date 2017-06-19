@@ -10,12 +10,14 @@
                   [adzerk/boot-cljs-repl "0.3.3"]
                   [com.cemerick/piggieback "0.2.2"]
                   [weasel "0.7.0"]
+                  [tolitius/boot-check "0.1.4"]
                   [rum "0.10.8"]])
 
 (require '[adzerk.boot-cljs :refer [cljs]]
          '[pandeiro.boot-http :refer [serve]]
          '[adzerk.boot-reload :refer [reload]]
-         '[adzerk.boot-cljs-repl :refer [cljs-repl start-repl]])
+         '[adzerk.boot-cljs-repl :refer [cljs-repl start-repl]]
+         '[tolitius.boot-check :as check])
 
 (def target-directory "target")
 
@@ -29,3 +31,12 @@
     (cljs-repl)
     (cljs)
     (target :dir #{target-directory})))
+
+(deftask check
+  "Verify code."
+  []
+  (comp
+    (check/with-bikeshed "-t")
+    (check/with-eastwood "-t")
+    (check/with-yagni "-t")
+    (check/with-kibit "-t")))
