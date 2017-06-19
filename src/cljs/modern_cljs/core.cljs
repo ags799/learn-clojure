@@ -1,6 +1,7 @@
 (ns modern-cljs.core
   (:require
-    [rum.core :as rum]))
+    [rum.core :as rum]
+    [datascript.core :as datascript]))
 
 (enable-console-print!)
 

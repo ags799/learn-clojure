@@ -7,11 +7,13 @@
                   [adzerk/boot-cljs "2.0.0"]
                   [pandeiro/boot-http "0.8.3"]
                   [adzerk/boot-reload "0.5.1"]
+                  [org.clojure/tools.nrepl "0.2.12"]
                   [adzerk/boot-cljs-repl "0.3.3"]
                   [com.cemerick/piggieback "0.2.2"]
                   [weasel "0.7.0"]
                   [tolitius/boot-check "0.1.4"]
-                  [rum "0.10.8"]])
+                  [rum "0.10.8"]
+                  [datascript "0.16.1"]])
 
 (require '[adzerk.boot-cljs :refer [cljs]]
          '[pandeiro.boot-http :refer [serve]]
