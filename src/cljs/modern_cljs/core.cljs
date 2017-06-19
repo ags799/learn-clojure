@@ -9,12 +9,17 @@
 
 (rum/defc header [] [:h1 "Tasks"])
 
+(rum/defc form []
+  [:form {:on-submit #(false)}
+    [:input {:type "text"}]
+    [:input {:type "submit"}]])
+
 (rum/defc task [t] [:li (:description t)])
 
 (rum/defc tasks []
   [:ol (map-indexed #(rum/with-key (task %2) %1) task-list)])
 
-(rum/defc app [db] [:div.app (header) (tasks)])
+(rum/defc app [db] [:div.app (header) (form) (tasks)])
 
 (def schema {})
 (defonce conn (datascript/create-conn schema))
