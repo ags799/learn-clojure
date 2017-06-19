@@ -10,7 +10,7 @@
 (rum/defc header [] [:h1 "Tasks"])
 
 (rum/defc form []
-  [:form {:on-submit (fn [_] false)}
+  [:form {:on-submit (fn [_] (js/alert "submitted") false)}
     [:input {:type "text"}]
     [:input {:type "submit"}]])
 
