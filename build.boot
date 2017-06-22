@@ -13,6 +13,7 @@
                   [weasel "0.7.0"]
                   [tolitius/boot-check "0.1.4"]
                   [rum "0.10.8"]
+                  [rum-reforms "0.4.3"]
                   [datascript "0.16.1"]])
 
 (require '[adzerk.boot-cljs :refer [cljs]]
